@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  db:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    container_name: db
+    hostname: db
+  rabbitmq:
+    image: masstransit/rabbitmq:latest
+    container_name: rabbitmq
+  jaeger:
+    image: jaegertracing/all-in-one
+    container_name: jaeger

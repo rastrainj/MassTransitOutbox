@@ -1,0 +1,52 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+		<DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+	</PropertyGroup>
+
+	<!-- https://endjin.com/blog/2022/01/raising-coding-standard-dotnet-analyzers -->
+	<PropertyGroup>
+		<AnalysisMode>Recommended</AnalysisMode>
+		<AnalysisModeGlobalization>None</AnalysisModeGlobalization>
+		<AnalysisModeSecurity>All</AnalysisModeSecurity>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="MassTransit.EntityFrameworkCore" Version="8.0.16" />
+		<PackageReference Include="MassTransit.RabbitMQ" Version="8.0.16" />
+		<PackageReference Include="Meziantou.Analyzer" Version="2.0.54">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.5" />
+		<PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="7.0.1">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.5" />
+		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.17.2" />
+		<PackageReference Include="Microsoft.VisualStudio.Threading.Analyzers" Version="17.6.40">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="OpenTelemetry" Version="1.5.0" />
+		<PackageReference Include="OpenTelemetry.Exporter.Console" Version="1.5.0" />
+		<PackageReference Include="OpenTelemetry.Exporter.Jaeger" Version="1.5.0" />
+		<PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.5.0" />
+		<PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.5.0-beta.1" />
+		<PackageReference Include="OpenTelemetry.Instrumentation.EntityFrameworkCore" Version="1.0.0-beta.7" />
+		<PackageReference Include="OpenTelemetry.Instrumentation.Http" Version="1.5.0-beta.1" />
+		<PackageReference Include="OpenTelemetry.Instrumentation.SqlClient" Version="1.5.0-beta.1" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\MasstransitOutbox.Contracts\MasstransitOutbox.Contracts.csproj" />
+	</ItemGroup>
+
+</Project>
